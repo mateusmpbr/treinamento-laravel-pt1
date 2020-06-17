@@ -1,0 +1,68 @@
+* Pré-requisitos
+	- XAMPP instalado
+	- Composer instalado e configurado no PATH do sistema
+	- Exigências do Laravel satisfeitas (Geralmente já são satisfeitas pelo XAMPP)
+
+--- PARTE 1 ---
+
+* Para criar o projeto
+	- composer create-project --prefer-dist laravel/laravel <NOME_DO_PROJETO>
+	- Estrutura de pastas do Laravel -> MVC
+	- Dentro do projeto -> config -> abrir app.php -> Alterar 'timezone' para 'America/Sao_Paulo'
+
+* Para definir tamanho padrão das strings (permite compatibilidade com todas as versões do MySQL)
+    - Dentro do projeto -> app -> Providers -> AppServiceProvider.php
+	- Adicionar no topo do arquivo (namespace do Schema) -> use Illuminate\Support\Facades\Schema;
+	- Adicionar dentro da função "boot()" -> Schema::defaultStringLength(191);
+
+* Para configurar acesso ao BD
+	- No .env -> Alterar DB_DATABASE (nome do DB) e outras constantes que forem necessárias;
+
+* Para acessar o projeto
+    - Pelo terminal -> php artisan serve (serve também para debuggar)
+    - Pelo XAMPP -> No navegador -> localhost/<DIRETÓRIO>/public
+
+* Para gerar views 'auth' no Laravel 7.0:
+    - composer require laravel/ui
+    - php artisan ui bootstrap
+    - php artisan ui bootstrap --auth
+    - npm install
+	- npm run dev
+
+* Para criar banco de dados com tabelas padrões do Laravel:
+    - Pelo XAMPP -> No navegador -> localhost/phpmyadmin -> Novo banco de dados (Definir collation para utf8mb4_general_ci)
+    - No cmd (para gerar migrations) -> php artisan migrate
+    - OBS: o nome do banco de dados deve coincidir com o do .env
+
+* Para mudar redirecionamentos padrões (No login, por exemplo):
+	- app -> Http -> Controllers -> Auth -> Verificar arquivos pertinentes
+	- app -> Http -> Controllers -> Middleware -> RedirectIfAuthenticated.php e outros arquivos pertinentes
+
+* Para visualizar declaração de rotas do projeto
+	- routes -> web.php
+
+* Para visualizar rotas do projeto
+    - php artisan route:list
+
+* Para fazer tradução para pt-br no Laravel:
+	- Baixar laravel-lang (https://github.com/caouecs/Laravel-lang)
+	- Renomear laravel-lang -> src -> pt-BR para laravel-lang -> src -> pt-br;
+	- Copiar laravel-lang -> src -> pt-br para <pasta_do_projeto> -> resources -> lang;
+	- Em config -> app.php:
+		* 'locale' => 'pt-br',
+		* 'fallback_locale' => 'pt-br'
+
+* Para trabalhar com rotas:
+	- routes -> web.php
+	- Ex -> Route::get('/', 'MyController@xpto');
+	- php artisan make:controller MyController
+	- Dentro de app -> Http -> Controllers -> MyController.php -> public function xpto(){ return view('myview.index'); }
+
+* Para utilizar assets:
+	- Inserir arquivos na pasta "public"
+	- Incluir referência onde se quer utilizar
+
+* Ao deletar um arquivo manualmente é importante -> No terminal -> composer dump-autoload
+
+* Vamos verificar como fica o sistema de login com a estilização do treinamento de front-end?
+* Vamos verificar como ficam as páginas do treinamento de front-end no Laravel?
