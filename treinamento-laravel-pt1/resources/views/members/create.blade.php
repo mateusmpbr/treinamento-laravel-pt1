@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Ícone do site -->
-    <link rel="icon" href="images/Logo-Flat-Versao-Clara.png" type="image/png" sizes="16x16">
+    <link rel="icon" href={{asset("images/Logo-Flat-Versao-Clara.png")}} type="image/png" sizes="16x16">
 
     <title>Membros</title>
 
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- Seu CSS customizado -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href={{asset("assets/css/style.css")}} />
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -43,7 +43,7 @@
         <nav id="sidebar">
             <!-- Cabeçalho do menu lateral -->
             <div class="sidebar-header">
-                <a href="index.html"><img src="images/Logo-Flat-Versao-Clara.png" alt="" height="75px"></a>
+                <a href="/departments"><img src={{asset("images/Logo-Flat-Versao-Clara.png")}} alt="" height="75px"></a>
             </div>
             <div id="mensagem">Bem vindo, <strong>Anderson</strong></div>
             <!-- Links do menu lateral -->
@@ -51,17 +51,17 @@
 
                 <!-- Departamentos -->
                 <li>
-                    <a href="index.html">Departamentos</a>
+                    <a href="/departments">Departamentos</a>
                 </li>
 
                 <!-- Membros -->
                 <li class="active">
-                    <a href="membros.html">Membros</a>
+                    <a href="/members">Membros</a>
                 </li>
 
                 <!-- Ferramentas -->
                 <li>
-                    <a href="ferramentas.html">Ferramentas</a>
+                    <a href="/tools">Ferramentas</a>
                 </li>
 
             </ul>
@@ -211,6 +211,10 @@
         </div>
     </div>
 
+    {{-- Logout Form --}}
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
@@ -228,7 +232,8 @@
         });
 
         function sair() {
-            window.location.href = "login.html"
+            event.preventDefault();
+            document.getElementById('logout-form').submit();
         }
 
         function confirmacao() {

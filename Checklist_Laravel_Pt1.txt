@@ -52,17 +52,26 @@
 		* 'locale' => 'pt-br',
 		* 'fallback_locale' => 'pt-br'
 
-* Para trabalhar com rotas:
-	- routes -> web.php
-	- Ex -> Route::get('/', 'MyController@xpto');
+* Para trabalhar com rotas (Exemplo):
 	- php artisan make:controller MyController
-	- Dentro de app -> Http -> Controllers -> MyController.php -> public function xpto(){ return view('myview.index'); }
+	- Em resources -> views -> Criar pasta "myview" -> Dentro de "myview" -> Criar arquivo "index.blade.php"
+	- Dentro de routes -> web.php -> Inserir Route::get('/', 'MyController@xpto');
+	- Dentro de app -> Http -> Controllers -> MyController.php -> Inserir public function xpto(){ return view('myview.index'); }
 
 * Para utilizar assets:
 	- Inserir arquivos na pasta "public"
 	- Incluir referência onde se quer utilizar
 
+* Para criar modelo, migration e controller ao mesmo tempo:
+	- php artisan make:model <NOME_DO_MODELO> -mc
+
 * Ao deletar um arquivo manualmente é importante -> No terminal -> composer dump-autoload
+
+* Para redirecionar página inicial para página de login:
+	- Dentro de routes -> web.php:
+		Route::get('/', function () {
+    		return redirect('login');
+		});
 
 * Vamos verificar como fica o sistema de login com a estilização do treinamento de front-end?
 * Vamos verificar como ficam as páginas do treinamento de front-end no Laravel?

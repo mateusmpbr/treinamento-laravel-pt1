@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Ícone do site -->
-    <link rel="icon" href="images/Logo-Flat-Versao-Clara.png" type="image/png" sizes="16x16">
+    <link rel="icon" href={{asset("images/Logo-Flat-Versao-Clara.png")}} type="image/png" sizes="16x16">
 
     <title>Membros</title>
 
@@ -15,25 +15,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- Seu CSS customizado -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href={{asset("assets/css/style.css")}} />
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
-    <script type="text/javascript" src="js/jquery.mask.js"></script>
-
-    <script type="text/javascript">
-        $(function() {
-            $("#telefone").mask("(99)99999-9999");
-
-
-        });
-    </script>
 </head>
 
 <body>
@@ -43,7 +30,7 @@
         <nav id="sidebar">
             <!-- Cabeçalho do menu lateral -->
             <div class="sidebar-header">
-                <a href="index.html"><img src="images/Logo-Flat-Versao-Clara.png" alt="" height="75px"></a>
+                <a href="/departments"><img src={{asset("images/Logo-Flat-Versao-Clara.png")}} alt="" height="75px"></a>
             </div>
             <div id="mensagem">Bem vindo, <strong>Anderson</strong></div>
             <!-- Links do menu lateral -->
@@ -51,17 +38,17 @@
 
                 <!-- Departamentos -->
                 <li>
-                    <a href="index.html">Departamentos</a>
+                    <a href="/departments">Departamentos</a>
                 </li>
 
                 <!-- Membros -->
                 <li class="active">
-                    <a href="membros.html">Membros</a>
+                    <a href="/members">Membros</a>
                 </li>
 
                 <!-- Ferramentas -->
                 <li>
-                    <a href="ferramentas.html">Ferramentas</a>
+                    <a href="/tools">Ferramentas</a>
                 </li>
 
             </ul>
@@ -90,35 +77,35 @@
                 <span></span>
                 <span></span>
             </button>
-            <h3> Cadastro de membros </h3>
+            <h3> Editar membros </h3>
 
-            <form accept="#" method="post">
+            <form action="">
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="inputNome">Nome</label>
-                        <input name="nome" type="nome" class="form-control" id="nome" placeholder="Nome" required>
+                        <input type="nome" class="form-control" id="inputNome" placeholder="Anderson Fernandes">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="inputStatus" id="status">Status</label>
-                        <select name="cargo" class="form-control" id="cargo">
-                            <option value="1">Ativo</option>
-                            <option value="2">Afastado</option>
-                            <option value="3">Desligado</option>
-                            <option value="4">Pós-Júnior</option>
+                        <label for="inputAddress">Status</label>
+                        <select class="form-control" id="cargo">
+                            <option selected>Ativo</option>
+                            <option>Afastado</option>
+                            <option>Desligado</option>
+                            <option>Pós-Júnior</option>
                             
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="departamento" id="departamento">Departamento</label>
-                        <select name="departamento" class="form-control" id="departamento">
-                            <option value="1">Presidência</option>
-                            <option value="2">Vice-presidência</option>
-                            <option value="3">Projetos</option>
-                            <option value="4">Qualidade</option>
-                            <option value="5">Marketing</option>
-                            <option value="6">Gestão de Pessoas</option>
+                        <label for="departamento">Departamento</label>
+                        <select class="form-control" id="departamento">
+                            <option>Presidência</option>
+                            <option>Vice-presidência</option>
+                            <option>Projetos</option>
+                            <option>Qualidade</option>
+                            <option selected>Marketing</option>
+                            <option>Gestão de Pessoas</option>
                             </select>
                     </div>
                 </div>
@@ -127,51 +114,50 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail">E-mail</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="E-mail" required>
+                        <input type="text" class="form-control" id="inputEmail" placeholder="andersonfernandes@visaojr.com.br">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputTelefone">Telefone (Apenas números)</label>
-                        <input name="telefone" type="text" class="form-control" id="telefone" placeholder="Telefone" required>
+                        <label for="inputTelefone">Telefone:</label>
+                        <input type="text" class="form-control" id="inputEmail" placeholder="(41) 436736363">
                     </div>
                 </div>
-
 
                 <label for="tools">Ferramentas utilizadas:</label>
                 <div class="form-check">
                     <div class="form-row">
                         <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1" name="check1">
+                            <input type="checkbox" class="form-check-input" id="check1" checked>
                             <label class="form-check-label" for="check1">HTML</label>
                         </div>
 
                         <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check2" name="check2">
-                            <label class="form-check-label" for="check2">CSS</label>
+                            <input type="checkbox" class="form-check-input" id="check1" checked>
+                            <label class="form-check-label" for="check1">CSS</label>
                         </div>
 
                         <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check3" name="check3">
-                            <label class="form-check-label" for="check3">JavaScript</label>
+                            <input type="checkbox" class="form-check-input" id="check1" checked>
+                            <label class="form-check-label" for="check1">JavaScript</label>
                         </div>
 
                         <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check4" name="check4">
-                            <label class="form-check-label" for="check4">PHP</label>
+                            <input type="checkbox" class="form-check-input" id="check1" checked>
+                            <label class="form-check-label" for="check1">PHP</label>
                         </div>
 
                         <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check5" name="check5">
-                            <label class="form-check-label" for="check5">Laravel</label>
+                            <input type="checkbox" class="form-check-input" id="check1" checked>
+                            <label class="form-check-label" for="check1">Laravel</label>
                         </div>
 
                         <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check6" name="check6">
-                            <label class="form-check-label" for="check6">Node JS</label>
+                            <input type="checkbox" class="form-check-input" id="check1">
+                            <label class="form-check-label" for="check1">Node JS</label>
                         </div>
 
                         <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check7" name="check7">
-                            <label class="form-check-label" for="check7">React JS</label>
+                            <input type="checkbox" class="form-check-input" id="check1">
+                            <label class="form-check-label" for="check1">React JS</label>
                         </div>
 
 
@@ -180,9 +166,9 @@
 
                 </div>
                 <label for="myFile">Selecione uma foto</label><br>
-                <input type="file" id="imagem" name="imagem" accept="image/*"><br><br>
+                <input type="file" id="myFile" name="myFile" accept="image/*"><br><br>
 
-                <input type="submit" value="Salvar" class="btn btn-dark" onclick="confirmacao()">
+                <button type="submit" class="btn btn-dark" onclick="confirmacao()">Salvar</button>
             </form>
         </div>
         </nav>
@@ -211,9 +197,13 @@
         </div>
     </div>
 
+    {{-- Logout Form --}}
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
@@ -228,17 +218,12 @@
         });
 
         function sair() {
-            window.location.href = "login.html"
+            event.preventDefault();
+            document.getElementById('logout-form').submit();
         }
 
         function confirmacao() {
-            var nome = document.getElementById("nome").value;
-            var email = document.getElementById("email").value;
-            var telefone = document.getElementById("telefone").value;
-            if (nome !== '' && email != '' && telefone != '') {
-                window.alert(`Membro: ${nome} \nCadastro realizado com sucesso!`)
-            }
-
+            window.alert("Cadastro atualizado com sucesso!")
         }
     </script>
 </body>

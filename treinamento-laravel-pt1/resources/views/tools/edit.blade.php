@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Ícone do site -->
-    <link rel="icon" href="images/Logo-Flat-Versao-Clara.png" type="image/png" sizes="16x16">
+    <link rel="icon" href={{asset("images/Logo-Flat-Versao-Clara.png")}} type="image/png" sizes="16x16">
 
-    <title>Membros</title>
+    <title>Ferramentas</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- Seu CSS customizado -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href={{asset("assets/css/style.css")}} />
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -27,10 +27,11 @@
 
     <div class="wrapper">
 
+
         <nav id="sidebar">
             <!-- Cabeçalho do menu lateral -->
             <div class="sidebar-header">
-                <a href="index.html"><img src="images/Logo-Flat-Versao-Clara.png" alt="" height="75px"></a>
+                <a href="/departments"><img src={{asset("images/Logo-Flat-Versao-Clara.png")}} alt="" height="75px"></a>
             </div>
             <div id="mensagem">Bem vindo, <strong>Anderson</strong></div>
             <!-- Links do menu lateral -->
@@ -38,19 +39,21 @@
 
                 <!-- Departamentos -->
                 <li>
-                    <a href="index.html">Departamentos</a>
+                    <a href="/departments">Departamentos</a>
                 </li>
 
                 <!-- Membros -->
-                <li class="active">
-                    <a href="membros.html">Membros</a>
+                <li>
+                    <a href="/members">Membros</a>
                 </li>
 
                 <!-- Ferramentas -->
-                <li>
-                    <a href="ferramentas.html">Ferramentas</a>
+                <li class="active">
+                    <a href="/tools">Ferramentas</a>
                 </li>
 
+            </ul>
+            </li>
             </ul>
 
             <ul class="list-unstyled CTAs">
@@ -65,10 +68,10 @@
                             <path fill-rule="evenodd" d="M2 13.5A1.5 1.5 0 0 1 .5 12V4A1.5 1.5 0 0 1 2 2.5h7A1.5 1.5 0 0 1 10.5 4v1.5a.5.5 0 0 1-1 0V4a.5.5 0 0 0-.5-.5H2a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 1 1 0V12A1.5 1.5 0 0 1 9 13.5H2z"/>
                           </svg>
                     </a>
+
                 </li>
             </ul>
         </nav>
-
 
 
         <div id="content">
@@ -77,96 +80,18 @@
                 <span></span>
                 <span></span>
             </button>
-            <h3> Editar membros </h3>
+            <h3> Editar Ferramenta </h3>
 
-            <form action="">
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="inputNome">Nome</label>
-                        <input type="nome" class="form-control" id="inputNome" placeholder="Anderson Fernandes">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputAddress">Status</label>
-                        <select class="form-control" id="cargo">
-                            <option selected>Ativo</option>
-                            <option>Afastado</option>
-                            <option>Desligado</option>
-                            <option>Pós-Júnior</option>
-                            
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="departamento">Departamento</label>
-                        <select class="form-control" id="departamento">
-                            <option>Presidência</option>
-                            <option>Vice-presidência</option>
-                            <option>Projetos</option>
-                            <option>Qualidade</option>
-                            <option selected>Marketing</option>
-                            <option>Gestão de Pessoas</option>
-                            </select>
-                    </div>
-                </div>
-
-
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail">E-mail</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="andersonfernandes@visaojr.com.br">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="inputTelefone">Telefone:</label>
-                        <input type="text" class="form-control" id="inputEmail" placeholder="(41) 436736363">
-                    </div>
-                </div>
-
-                <label for="tools">Ferramentas utilizadas:</label>
-                <div class="form-check">
+            <form action="#">
+                <div class="form-group">
                     <div class="form-row">
-                        <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1" checked>
-                            <label class="form-check-label" for="check1">HTML</label>
+                        <div class="form-group col-md-6">
+                            <label for="inputNome">Ferramenta</label>
+                            <input type="nome" class="form-control" id="inputNome" placeholder="HTML">
                         </div>
-
-                        <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1" checked>
-                            <label class="form-check-label" for="check1">CSS</label>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1" checked>
-                            <label class="form-check-label" for="check1">JavaScript</label>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1" checked>
-                            <label class="form-check-label" for="check1">PHP</label>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1" checked>
-                            <label class="form-check-label" for="check1">Laravel</label>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1">
-                            <label class="form-check-label" for="check1">Node JS</label>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <input type="checkbox" class="form-check-input" id="check1">
-                            <label class="form-check-label" for="check1">React JS</label>
-                        </div>
-
-
                     </div>
-
-
                 </div>
-                <label for="myFile">Selecione uma foto</label><br>
-                <input type="file" id="myFile" name="myFile" accept="image/*"><br><br>
+
 
                 <button type="submit" class="btn btn-dark" onclick="confirmacao()">Salvar</button>
             </form>
@@ -197,6 +122,10 @@
         </div>
     </div>
 
+    {{-- Logout Form --}}
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -214,11 +143,12 @@
         });
 
         function sair() {
-            window.location.href = "login.html"
+            event.preventDefault();
+            document.getElementById('logout-form').submit();
         }
 
         function confirmacao() {
-            window.alert("Cadastro atualizado com sucesso!")
+            window.alert("Ferramenta atualizada com sucesso!")
         }
     </script>
 </body>
